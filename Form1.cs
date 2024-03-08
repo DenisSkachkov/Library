@@ -22,7 +22,7 @@ namespace LR1_CD
         {
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                string query = "SELECT Title, Author, Publication_Year, Genre, Client FROM BookJournal";
+                string query = "SELECT ID, Title, Author, Publication_Year, Genre, Client FROM BookJournal";
 
                 SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
 
@@ -93,7 +93,7 @@ namespace LR1_CD
 
                 using (SqlConnection connection = new SqlConnection(connectionString))
                 {
-                    string query = "DELETE FROM BooksJournal WHERE ID = @ID";
+                    string query = "DELETE FROM BookJournal WHERE ID = @ID";
                     SqlCommand command = new SqlCommand(query, connection);
                     command.Parameters.AddWithValue("@ID", bookId);
 
